@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 public class SquarePlayer : Player
@@ -17,10 +16,12 @@ public class SquarePlayer : Player
     protected override void Update()
     {
         base.Update();
-        if (CheckDead())
+
+        if (CheckDead()) // If player is dead, should set velocity to 0 and return
         {
             return;
         }
+
         Movement();
     }
 

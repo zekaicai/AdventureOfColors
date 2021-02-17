@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColorBlock : MonoBehaviour
 {
     [SerializeField] private bool isRed;
-    [SerializeField] Player player;
+    private Player player;
     private Collider2D coll;
     private SpriteRenderer sr;
 
@@ -15,6 +15,7 @@ public class ColorBlock : MonoBehaviour
         coll = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
         ChangeColor();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class ColorBlock : MonoBehaviour
 
     private void CheckPlayerColor()
     {
-        if (this.isRed == player.isRed)
+        if (this.sr.color.Equals(GetPlayerColor()))
         {
             Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), coll, true);
         }
@@ -33,6 +34,11 @@ public class ColorBlock : MonoBehaviour
         {
             Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), coll, false);
         }
+    }
+
+    private static Color GetPlayerColor()
+    {
+        return GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color;
     }
 
     private void ChangeColor()

@@ -22,10 +22,12 @@ public class CirclePlayer : Player
     protected override void Update()
     {
         base.Update();
-        if (CheckDead())
+
+        if (CheckDead()) // If player is dead, should set velocity to 0 and return
         {
             return;
         }
+
         Movement();
     }
 
