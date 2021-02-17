@@ -23,7 +23,6 @@ public class DeathLine : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            print("collision death line");
             explosion.Play();
             float delayInMs = 0.2f;
             float ms = Time.deltaTime;

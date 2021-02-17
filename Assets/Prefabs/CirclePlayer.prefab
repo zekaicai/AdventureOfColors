@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad140aac42a14da8bdf22752a86c8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPink: 1
+  isRed: 1
   explosion: {fileID: 3787114319818226104}
   moveForce: 8
   jumpForce: 10

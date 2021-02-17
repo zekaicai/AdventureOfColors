@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7ccfa70b0f546c5a9680e1efaabbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPink: 1
+  isRed: 1
   explosion: {fileID: 3306521394882374467}
   moveForce: 6
 --- !u!58 &3306521394882374465

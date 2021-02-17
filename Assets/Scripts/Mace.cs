@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Mace : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D rb;
@@ -14,14 +14,11 @@ public class Enemy : MonoBehaviour
     private float nextActionTime = 0.0f;
     private enum State { waiting, waitingEnd, jumping, falling };
     [SerializeField]private State state = State.waiting;
-    //[SerializeField]private float time = 0.0f;
-    //public float interpolationPeriod = 0.1f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
-        //upPoint = transform.position.y;
         nextActionTime = Time.time + period;
     }
 
@@ -60,7 +57,6 @@ public class Enemy : MonoBehaviour
             }
             else if (state == State.jumping)
             {
-                print("111");
                 state = State.waiting;
                 nextActionTime = Time.time + period;
             }

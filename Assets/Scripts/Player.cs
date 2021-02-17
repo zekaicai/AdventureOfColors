@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public bool isPink = true;
+    public bool isRed = true;
     protected Rigidbody2D rb;
     protected Animator anim;
     protected SpriteRenderer sr;
@@ -31,9 +31,9 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            isPink = !isPink;
+            isRed = !isRed;
         }
-        if (isPink)
+        if (isRed)
         {
             sr.color = Color.red;
         }
