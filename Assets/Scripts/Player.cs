@@ -6,76 +6,64 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Collider2D coll;
-    private Animator anim;
-    [SerializeField] SpriteRenderer sr;
-    [SerializeField] float jumpForce;
-    [SerializeField] float moveForce;
-    [SerializeField] LayerMask ground;
-    [SerializeField] Color pink;
-    [SerializeField] Color blue;
-    [SerializeField] AudioSource explosion;
-    public bool isDead = false;
     public bool isPink = true;
+    protected Rigidbody2D rb;
+    protected Animator anim;
+    protected SpriteRenderer sr;
+    [SerializeField] protected AudioSource explosion;
+    [SerializeField] protected float moveForce;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
-        //sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        if (isDead)
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            return;
-        }
+        ChangeColor();
+    }
 
-        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
-        {
-            jump();
-        }
-        else
-        {
-            rb.velocity = new Vector2(moveForce, rb.velocity.y);
-        }
+    protected void ChangeColor()
+    {
         if (Input.GetKeyDown(KeyCode.C))
         {
             isPink = !isPink;
         }
         if (isPink)
         {
-            sr.color = pink;
+            sr.color = Color.red;
         }
         else
         {
-            sr.color = blue;
+            sr.color = Color.green;
         }
     }
 
-    private void jump()
+    protected bool CheckDead()
     {
-        rb.velocity = new Vector2(moveForce, jumpForce);
+        if (anim.GetBool("Dead"))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            return true;
+        }
+        return false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Spike")
+        if (collision.gameObject.CompareTag("Spike"))
         {
-            isDead = true;
             rb.velocity = new Vector2(0, 0);
             anim.SetBool("Dead", true);
             explosion.Play();
         }
     }
 
-    private void GameOver()
+    protected void GameOver()
     {
         Destroy(this.gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
