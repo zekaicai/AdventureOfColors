@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3487215261814324512}
   - component: {fileID: 3487215261814324518}
   m_Layer: 0
-  m_Name: Box
-  m_TagString: Untagged
+  m_Name: ColorBox
+  m_TagString: ColorBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,9 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a165e913c6bcc478793a2ba280d6f300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPink: 1
-  player: {fileID: 0}
-  coll: {fileID: 3487215261814324518}
+  isRed: 0
 --- !u!60 &3487215261814324518
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -146,9 +144,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.49101526, y: 0.50526315}
-      - {x: -0.48814774, y: -0.24305105}
+    - - {x: -0.4820202, y: 0.50526315}
+      - {x: -0.48140335, y: -0.24754953}
       - {x: -0.2727089, y: -0.49585676}
       - {x: 0.26140863, y: -0.4956482}
-      - {x: 0.47162628, y: -0.22421074}
-      - {x: 0.47162133, y: 0.50526315}
+      - {x: 0.46038055, y: -0.2287097}
+      - {x: 0.4603718, y: 0.50526315}
