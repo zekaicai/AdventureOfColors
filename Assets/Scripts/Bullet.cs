@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             rb.velocity = new Vector2(0, 0);    
-            anim.SetBool("isDead", true);
+            anim.SetBool("Dead", true);
         }
     }
 

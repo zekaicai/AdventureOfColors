@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,38 +6,59 @@ using UnityEngine;
 public class ColorBlock : MonoBehaviour
 {
     [SerializeField] private bool isRed;
-    private Player player;
-    private Collider2D coll;
-    private SpriteRenderer sr;
+    protected Player player;
+    protected Collider2D coll;
+    protected SpriteRenderer sr;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         coll = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
         ChangeColor();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
+        CheckBlockColor();
         CheckPlayerColor();
+    }
+
+    private void CheckBlockColor()
+    {
+        GameObject[] colorBlocks = GameObject.FindGameObjectsWithTag("ColorBlock");
+        for (int i = 0; i < colorBlocks.Length; i++)
+        {
+            print(i);
+            SetCollision(colorBlocks[i]);
+        }
     }
 
     private void CheckPlayerColor()
     {
-        if (this.sr.color.Equals(GetPlayerColor()))
+        SetCollision(GameObject.FindGameObjectWithTag("Player"));
+    }
+
+    private void SetCollision(GameObject gameObject)
+    {
+        if (this.sr.color.Equals(GetObjectColor(gameObject)))
         {
-            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), coll, true);
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), coll, true);
         }
         else
         {
-            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), coll, false);
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), coll, false);
         }
     }
 
-    private static Color GetPlayerColor()
+    private object GetObjectColor(GameObject gameObject)
+    {
+        return gameObject.GetComponent<SpriteRenderer>().color;
+    }
+
+    private static Color GetColor()
     {
         return GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color;
     }
