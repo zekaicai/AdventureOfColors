@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,19 @@ public class SquarePlayer : Player
         }
 
         Movement();
+        Zuozhetongdao();
+    }
+
+    private void Zuozhetongdao()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                transform.position = new Vector3(15.46f, -9.54f, 0);
+            }
+        }
+
     }
 
     private void Movement()

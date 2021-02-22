@@ -31,7 +31,6 @@ public class ColorBlock : MonoBehaviour
         GameObject[] colorBlocks = GameObject.FindGameObjectsWithTag("ColorBlock");
         for (int i = 0; i < colorBlocks.Length; i++)
         {
-            print(i);
             SetCollision(colorBlocks[i]);
         }
     }
@@ -43,14 +42,19 @@ public class ColorBlock : MonoBehaviour
 
     private void SetCollision(GameObject gameObject)
     {
-        if (this.sr.color.Equals(GetObjectColor(gameObject)))
+        Collider2D[] collider2Ds = gameObject.GetComponents<Collider2D>();
+        for (int i = 0; i < collider2Ds.Length; i++)
         {
-            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), coll, true);
+            if (this.sr.color.Equals(GetObjectColor(gameObject)))
+            {
+                Physics2D.IgnoreCollision(collider2Ds[i], coll, true);
+            }
+            else
+            {
+                Physics2D.IgnoreCollision(collider2Ds[i], coll, false);
+            }
         }
-        else
-        {
-            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), coll, false);
-        }
+        
     }
 
     private object GetObjectColor(GameObject gameObject)
