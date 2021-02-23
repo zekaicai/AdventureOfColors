@@ -1,17 +1,11 @@
 # Adventure of Colors
+## Game Controls
+Press C to change color  
+Circle mode: Press SPACE to jump
+Square mode: Press ⬅️ &➡️ to move 
 
-## File Structure
-/Assets
-- Animation( .anim and .controller file)
-- Map(tilemap)
-- Pictures(Store all pictures you use here, copy before you use)
-- Prefabs
-- Scenes
-- Script
-## Prefabs
-- Circle Player
-- SquarePlayer
-- Platform: (Un)Check ``` isRed ``` to change color
-- Spike: Drag and use
-- Cannon and Bullte(still in development)
-- Mace(still in development)
+## WebGL link
+[WebGL](https://zekaicai.github.io/AdventureOfColors/WebBuild/index.html)
+
+## Purpose of the prototype
+This prototype
