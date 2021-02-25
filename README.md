@@ -45,7 +45,7 @@ The purpose of this prototype is to provide you a sense of the idea of the game 
     ```
 5. Create pull request on github and merge your new branch to main branch
 
-## How to modify the build on our WebGL link?
+## How to modify the build on our WebGL link
 1. Build a WebGL application on your local machine and save it in ```/WebBuild ``` repository
 2. Push your change to ```main``` branch
 3. Wait a few seconds and it should work
