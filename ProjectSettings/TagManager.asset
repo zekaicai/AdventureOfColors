@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spike
+  - Ground
+  - Cannon
+  - ColorBlock
   layers:
   - Default
   - TransparentFX
