@@ -35,6 +35,7 @@ The purpose of this prototype is to provide you a sense of the idea of the game 
 1. Checkout a branch from main branch
     ```sh
     $ git checkout main # Make sure you start on main branch
+    $ git pull
     $ git checkout -b [yourBranchName] # Create a new branch
     ```
 2. Develop your new feature on the new branch
