@@ -7,7 +7,7 @@
 - [Unity Version](#unity-version)
 - [Scenes](#scenes)
 - [How to add new feature](#How-to-add-new-feature)
-- [How to modify the build on our WebGL link?](#How-to-modify-the-build-on-our-WebGL-link?)
+- [How to modify the build on our WebGL link](#How-to-modify-the-build-on-our-WebGL-link)
 <!-- - [Prefabs](#prefabs) -->
 
 ## Game Controls
