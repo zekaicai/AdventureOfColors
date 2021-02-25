@@ -6,7 +6,7 @@
 - [Purpose of the prototype](#purpose-of-the-prototype)
 - [Unity Version](#unity-version)
 - [Scenes](#scenes)
-- [How to add new feature](#How-to-add-new-feature)
+- [How to add new features](#How-to-add-new-features)
 - [How to modify the build on our WebGL link](#How-to-modify-the-build-on-our-WebGL-link)
 <!-- - [Prefabs](#prefabs) -->
 
@@ -31,7 +31,7 @@ The purpose of this prototype is to provide you a sense of the idea of the game 
 - VodkaDance: (In Development) Circle music scene by Zekai
 - Ball With BGM: 
 
-## How to add new feature
+## How to add new features
 1. Checkout a branch from main branch
     ```sh
     $ git checkout main # Make sure you start on main branch
