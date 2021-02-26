@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SquareScene.unity
     guid: 53e6998eb903b4fef9545867226e9b11
+  - enabled: 1
+    path: Assets/Scenes/VodkaDance.unity
+    guid: 2bb8146e68c194834abaef5e0566dded
   m_configObjects: {}
