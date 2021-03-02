@@ -6,8 +6,8 @@
 - [Purpose of the prototype](#purpose-of-the-prototype)
 - [Unity Version](#unity-version)
 - [Scenes](#scenes)
-- [How to add new feature](#How-to-add-new-feature)
-- [How to modify the build on our WebGL link?](#How-to-modify-the-build-on-our-WebGL-link?)
+- [How to add new features](#How-to-add-new-features)
+- [How to modify the build on our WebGL link](#How-to-modify-the-build-on-our-WebGL-link)
 <!-- - [Prefabs](#prefabs) -->
 
 ## Game Controls
@@ -31,10 +31,11 @@ The purpose of this prototype is to provide you a sense of the idea of the game 
 - VodkaDance: (In Development) Circle music scene by Zekai
 - Ball With BGM: 
 
-## How to add new feature
+## How to add new features
 1. Checkout a branch from main branch
     ```sh
     $ git checkout main # Make sure you start on main branch
+    $ git pull
     $ git checkout -b [yourBranchName] # Create a new branch
     ```
 2. Develop your new feature on the new branch
@@ -45,7 +46,7 @@ The purpose of this prototype is to provide you a sense of the idea of the game 
     ```
 5. Create pull request on github and merge your new branch to main branch
 
-## How to modify the build on our WebGL link?
+## How to modify the build on our WebGL link
 1. Build a WebGL application on your local machine and save it in ```/WebBuild ``` repository
 2. Push your change to ```main``` branch
 3. Wait a few seconds and it should work
