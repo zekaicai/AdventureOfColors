@@ -29,6 +29,20 @@ public class CirclePlayer : Player
         }
 
         Movement();
+        Zuozhetongdao();
+    }
+
+    private void Zuozhetongdao()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                print("111");
+                SceneManager.LoadScene("VodkaDance");
+            }
+        }
+
     }
 
     private void Movement()
