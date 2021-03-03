@@ -52501,7 +52501,7 @@ PrefabInstance:
       objectReference: {fileID: 8405146169841249453, guid: c2ddb357c17df46998705b5a2b1e9a79, type: 3}
     - target: {fileID: 3787114319818226106, guid: bfb2689802484405c8d9ca509ea53e73, type: 3}
       propertyPath: afterImageGenerationTimeInterval
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfb2689802484405c8d9ca509ea53e73, type: 3}
