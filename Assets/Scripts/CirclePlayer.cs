@@ -11,11 +11,19 @@ public class CirclePlayer : Player
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask ground;
 
+    [SerializeField]
+    private GameObject afterImagePrefab;
+    [SerializeField]
+    private float afterImageGenerationTimeInterval = 0.02f;
+    private float lastAfterImageTime;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         coll = GetComponent<Collider2D>();
+
+        lastAfterImageTime = Time.time;
     }
 
     // Update is called once per frame
@@ -30,6 +38,7 @@ public class CirclePlayer : Player
 
         Movement();
         Zuozhetongdao();
+        GenerateAfterImage();
     }
 
     private void Zuozhetongdao()
@@ -54,6 +63,18 @@ public class CirclePlayer : Player
         else
         {
             rb.velocity = new Vector2(moveForce, rb.velocity.y);
+        }
+    }
+
+    private void GenerateAfterImage()
+    {
+        float currTime = Time.time;
+        if (currTime > (lastAfterImageTime + afterImageGenerationTimeInterval))
+        {
+            // generate an afterimage
+            GameObject afterImage = Instantiate(afterImagePrefab);
+            afterImage.SetActive(true);
+            lastAfterImageTime = currTime;
         }
     }
 
