@@ -11,15 +11,15 @@ public class Player : MonoBehaviour
     protected Animator anim;
     protected SpriteRenderer sr;
     [SerializeField] protected AudioSource explosion;
-    [SerializeField] protected AudioSource cherrySound;
     [SerializeField] protected float moveForce;
+    
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();        
     }
 
     // Update is called once per frame
@@ -61,15 +61,6 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
             anim.SetBool("Dead", true);
             explosion.Play();
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Collectable")
-        {
-            cherrySound.Play();
-            Destroy(collision.gameObject);
         }
     }
 
