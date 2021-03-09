@@ -29,6 +29,7 @@ The purpose of this prototype is to provide you a sense of the idea of the game 
 - CircleScene: Prototype circle scene by Zekai
 - SquareScene: Prototype square scene by Zekai
 - VodkaDance: (In Development) Circle music scene by Zekai
+- SquareTutorial: (In Development) Tutorial scene for square by Zekai
 - Ball With BGM: 
 
 ## How to add new features
