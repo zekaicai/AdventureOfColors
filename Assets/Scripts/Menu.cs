@@ -25,4 +25,9 @@ public class Menu : MonoBehaviour
     public void ShowGameDesign(){
         GameObject.Find("Canvas/MainMenu/GameDesign").SetActive(true);
     }
+    public void ResumeToScene()
+    {
+        GameObject.Find("Canvas/MainMenu/Rules").SetActive(false);
+        GameObject.Find("Canvas/MainMenu/GameDesign").SetActive(false);
+    }
 }
