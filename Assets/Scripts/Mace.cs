@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class Mace : MonoBehaviour
 {
-    // Start is called before the first frame update
-    Rigidbody2D rb;
-    Collider2D coll;
-    [SerializeField] LayerMask ground;
-    [SerializeField] float jumpForce;
+    [SerializeField] private float downPoint;
     [SerializeField] private float upPoint;
-    [SerializeField] float period;
-    private float nextActionTime = 0.0f;
+    [SerializeField] private float moveForce;
     private enum State { waiting, waitingEnd, jumping, falling };
-    [SerializeField]private State state = State.waiting;
+    [SerializeField] private State state = State.waiting;
+    private float nextActionTime = 0.0f;
+    [SerializeField] float period;
+    private Rigidbody2D rb;
 
+    // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<Collider2D>();
         nextActionTime = Time.time + period;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -34,9 +32,36 @@ public class Mace : MonoBehaviour
             return;
         }
 
-        float pos = transform.position.y;
+        ChangeState();
+        Move();
+    }
 
-        if (coll.IsTouchingLayers(ground))
+    private void Move()
+    {
+        if (state == State.jumping)
+        {
+            transform.position = new Vector3(transform.position.x,
+                transform.position.y + moveForce * Time.deltaTime,
+                transform.position.z);
+        }
+        else if (state == State.falling)
+        {
+            transform.position = new Vector3(transform.position.x,
+                transform.position.y - moveForce * Time.deltaTime,
+                transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x,
+                transform.position.y,
+                transform.position.z);
+        }
+    }
+
+    private void ChangeState()
+    {
+        float loc = transform.position.y;
+        if (loc <= downPoint)
         {
             if (state == State.waitingEnd)
             {
@@ -49,7 +74,7 @@ public class Mace : MonoBehaviour
             }
         }
 
-        if (pos >= upPoint)
+        else if (loc >= upPoint)
         {
             if (state == State.waitingEnd)
             {
@@ -61,17 +86,21 @@ public class Mace : MonoBehaviour
                 nextActionTime = Time.time + period;
             }
         }
-
-        if (state == State.jumping)
-        {
-            rb.velocity = new Vector2(0, jumpForce);
-        }
-        else if (state == State.falling)
-        {
-            rb.velocity = new Vector2(0, -jumpForce);
-        } else
-        {
-            rb.velocity = new Vector2(0, 0);
-        }
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        collision.collider.transform.SetParent(transform);
+    //    }
+    //}
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        collision.collider.transform.SetParent(null);
+    //    }
+    //}
 }
