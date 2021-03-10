@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Analytics;
-
+using UnityEngine.UI;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -15,20 +16,37 @@ public class Player : MonoBehaviour
     [SerializeField] protected AudioSource explosion;
     [SerializeField] protected float moveForce;
     [SerializeField] protected string levelName;
-    
+
+    [SerializeField] private List<Image> keys;
+    private int numKeys;
+    [SerializeField] private int targetNumKeys;
+    [SerializeField] protected AudioSource keySound;
+
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();        
+        sr = GetComponent<SpriteRenderer>();
+        numKeys = 0;
+        targetNumKeys = keys.Capacity;
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
         ChangeColor();
+        Suicide();
+    }
+
+    private void Suicide()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            anim.SetBool("Dead", true);
+            explosion.Play();
+        }
     }
 
     protected void ChangeColor()
@@ -47,6 +65,29 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void GetKey()
+    {
+        keySound.Play();
+        numKeys++;
+        ChangeKeyUIColor(keys[numKeys - 1]);
+    }
+
+
+    private void ChangeKeyUIColor(Image key)
+    {
+        key.color = new Color32(234, 116, 49, 255);
+    }
+
+    public bool GetEnoughKeys()
+    {
+        return numKeys >= targetNumKeys;
+    }
+
+    public int GetNumKeys()
+    {
+        return numKeys;
+    }
+
     protected bool CheckDead()
     {
         if (anim.GetBool("Dead"))
@@ -61,15 +102,21 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spike") && !anim.GetBool("Dead"))
         {
-
+            bool isFalling = false;
+            if (rb.velocity.y < 0)
+            {
+                isFalling = true;
+            }
             AnalyticsResult result = Analytics.CustomEvent(
                 "DeathOnSpike",
                 new Dictionary<string, object>{
-                    {"SpikeName", collision.gameObject.name}
+                    {"SpikeName", collision.gameObject.name},
+                    {"HitSpikeOnWhenFalling", isFalling}
                 }
             );
 
             Debug.Log(collision.gameObject.name);
+            Debug.Log(isFalling);
             Debug.Log(result);
 
             rb.velocity = new Vector2(0, 0);
@@ -80,9 +127,8 @@ public class Player : MonoBehaviour
 
     protected void GameOver()
     {
-
         AnalyticsResult result = Analytics.CustomEvent(
-                "DeathOnFalling",
+                "Death",
                 new Dictionary<string, object>{
                     {"Level", levelName}
                 }
@@ -95,9 +141,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "DeathLine")
         {
-
             AnalyticsResult result = Analytics.CustomEvent(
-                "DeathOnFalling",
+                "DeathFallingOFF",
                 new Dictionary<string, object>{
                     {"Level", levelName}
                 }
@@ -111,8 +156,34 @@ public class Player : MonoBehaviour
                 ms += Time.deltaTime;
                 yield return null;
             }
+
             anim.SetBool("Dead", true);
             explosion.Play();
+        }
+
+        else if (collision.gameObject.tag == "Goal")
+        {
+            if (!GetEnoughKeys())
+            {
+                AnalyticsResult result = Analytics.CustomEvent(
+                "NotEnoughKeys",
+                new Dictionary<string, object>{
+                    {"NumKeys", GetNumKeys()}
+                }
+                );
+                print("not enough");
+            }
+            else
+            {
+                AnalyticsResult result2 = Analytics.CustomEvent(
+                "PassLevel",
+                new Dictionary<string, object>{
+                    {"Level", levelName},
+                    {"Time", Time.time}
+                }
+                );
+                SceneManager.LoadScene(nextSceneName);
+            }
         }
     }
 }

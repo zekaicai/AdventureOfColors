@@ -30960,7 +30960,6 @@ GameObject:
   m_Component:
   - component: {fileID: 265484050}
   - component: {fileID: 265484049}
-  - component: {fileID: 265484048}
   - component: {fileID: 265484051}
   m_Layer: 0
   m_Name: DeathLine
@@ -30969,19 +30968,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &265484048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265484047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de412565035364105bd31a11468e0c4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 265484051}
 --- !u!61 &265484049
 BoxCollider2D:
   m_ObjectHideFlags: 0
