@@ -10,6 +10,8 @@ TagManager:
   - ColorBlock
   - Collectable
   - Key
+  - DeathLine
+  - Goal
   layers:
   - Default
   - TransparentFX

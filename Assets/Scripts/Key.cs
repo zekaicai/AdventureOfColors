@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Key : MonoBehaviour
 {
@@ -22,6 +23,14 @@ public class Key : MonoBehaviour
         if (!collected && collision.tag == "Player")
         {
             collected = true;
+
+            Analytics.CustomEvent(
+                "Key",
+                new Dictionary<string, object>{
+                    {"KeyName", this.gameObject.name}
+                }
+            );
+
             Destroy(this.gameObject);
             SquarePlayer player = collision.gameObject.GetComponent<SquarePlayer>();
             player.GetKey();

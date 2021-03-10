@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;  
 using UnityEngine.UI;
+using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 
 public class SquarePlayer : Player
@@ -16,6 +18,7 @@ public class SquarePlayer : Player
     protected override void Start()
     {
         base.Start();
+        print(this.GetInstanceID());
         numKeys = 0;
         targetNumKeys = keys.Capacity;
     }
@@ -76,5 +79,31 @@ public class SquarePlayer : Player
     public bool GetEnoughKeys()
     {
         return numKeys >= targetNumKeys;
+    }
+
+    public int GetNumKeys()
+    {
+        return numKeys;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            AnalyticsResult result = Analytics.CustomEvent(
+                "HitGoal",
+                new Dictionary<string, object>{
+                    {"NumKeys", GetNumKeys()}
+                }
+            );
+            print(targetNumKeys);
+            print(numKeys);
+            if (!GetEnoughKeys())
+            {
+                return;
+            }
+
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 }
