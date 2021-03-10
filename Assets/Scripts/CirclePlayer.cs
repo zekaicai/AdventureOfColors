@@ -61,4 +61,12 @@ public class CirclePlayer : Player
     {
         rb.velocity = new Vector2(moveForce, jumpForce);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+    }
 }
