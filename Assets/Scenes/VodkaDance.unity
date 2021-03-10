@@ -32093,7 +32093,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.37997, y: -4.600592, z: -10}
+  m_LocalPosition: {x: -48.988667, y: -4.6008196, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52588,7 +52588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3787114319818226106, guid: bfb2689802484405c8d9ca509ea53e73, type: 3}
       propertyPath: nextSceneName
-      value: SquareTutorial
+      value: FinishScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfb2689802484405c8d9ca509ea53e73, type: 3}
