@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
             anim.SetBool("Dead", true);
             explosion.Play();
         }
-
+        
         else if (collision.gameObject.tag == "Goal")
         {
             if (!GetEnoughKeys())
@@ -185,5 +185,6 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene(nextSceneName);
             }
         }
+        
     }
 }
