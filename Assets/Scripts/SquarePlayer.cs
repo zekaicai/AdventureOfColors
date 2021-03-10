@@ -9,18 +9,10 @@ using UnityEngine.SceneManagement;
 
 public class SquarePlayer : Player
 {
-    [SerializeField] private List<Image> keys;
-    private int numKeys;
-    [SerializeField] private int targetNumKeys;
-    [SerializeField] protected AudioSource keySound;
-
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        print(this.GetInstanceID());
-        numKeys = 0;
-        targetNumKeys = keys.Capacity;
     }
 
     // Update is called once per frame
@@ -49,13 +41,6 @@ public class SquarePlayer : Player
 
     }
 
-    public void GetKey()
-    {
-        keySound.Play();
-        numKeys++;
-        ChangeKeyUIColor(keys[numKeys - 1]);
-    }
-
     private void Movement()
     {
         float hDirection = Input.GetAxis("Horizontal");
@@ -68,42 +53,6 @@ public class SquarePlayer : Player
         {
             rb.velocity = new Vector2(moveForce, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
-        }
-    }
-
-    private void ChangeKeyUIColor(Image key)
-    {
-        key.color = new Color32(234, 116, 49, 255);
-    }
-
-    public bool GetEnoughKeys()
-    {
-        return numKeys >= targetNumKeys;
-    }
-
-    public int GetNumKeys()
-    {
-        return numKeys;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Goal")
-        {
-            AnalyticsResult result = Analytics.CustomEvent(
-                "HitGoal",
-                new Dictionary<string, object>{
-                    {"NumKeys", GetNumKeys()}
-                }
-            );
-            print(targetNumKeys);
-            print(numKeys);
-            if (!GetEnoughKeys())
-            {
-                return;
-            }
-
-            SceneManager.LoadScene(nextSceneName);
         }
     }
 }
