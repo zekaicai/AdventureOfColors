@@ -12,6 +12,7 @@ TagManager:
   - Key
   - DeathLine
   - Goal
+  - Check
   layers:
   - Default
   - TransparentFX
