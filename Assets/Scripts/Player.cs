@@ -179,7 +179,7 @@ public class Player : MonoBehaviour
                 Analytics.CustomEvent(
                     "PassLevel_" + levelName,
                     new Dictionary<string, object>{
-                        {"Time", Time.time},
+                        {"Time", Mathf.RoundToInt(Time.time / 10)},
                     }
                 );
 

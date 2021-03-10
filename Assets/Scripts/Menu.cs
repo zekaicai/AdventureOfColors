@@ -22,7 +22,6 @@ public class Menu : MonoBehaviour
         string name =  EventSystem.current.currentSelectedGameObject.name;
         if(name == "1")
         {
-            print("111");
             SceneManager.LoadScene("SquareTutorial");
         }
         if(name == "2")
