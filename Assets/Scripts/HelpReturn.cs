@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
+
 public class HelpReturn : MonoBehaviour
 {
     public void ShowRules(){
+
+        Analytics.CustomEvent("HitHelpInLevel");
         GameObject.Find("Canvas/Buttons/Rules").SetActive(true);
-        
     }
     public void PauseGame()
     {

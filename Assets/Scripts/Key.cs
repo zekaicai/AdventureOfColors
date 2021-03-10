@@ -20,12 +20,12 @@ public class Key : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collected && collision.tag == "Player")
+        if (!collected && collision.CompareTag("Player"))
         {
             collected = true;
 
             Analytics.CustomEvent(
-                "Key",
+                "GetKey",
                 new Dictionary<string, object>{
                     {"KeyName", this.gameObject.name}
                 }

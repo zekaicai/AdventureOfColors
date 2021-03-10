@@ -107,18 +107,13 @@ public class Player : MonoBehaviour
             {
                 isFalling = true;
             }
-            AnalyticsResult result = Analytics.CustomEvent(
-                "DeathOnSpike",
+            Analytics.CustomEvent(
+                "DieSpike",
                 new Dictionary<string, object>{
                     {"SpikeName", collision.gameObject.name},
-                    {"HitSpikeOnWhenFalling", isFalling}
+                    {"DieWhenFalling", isFalling}
                 }
             );
-
-            Debug.Log(collision.gameObject.name);
-            Debug.Log(isFalling);
-            Debug.Log(result);
-
             rb.velocity = new Vector2(0, 0);
             anim.SetBool("Dead", true);
             explosion.Play();
@@ -127,8 +122,8 @@ public class Player : MonoBehaviour
 
     protected void GameOver()
     {
-        AnalyticsResult result = Analytics.CustomEvent(
-                "Death",
+        Analytics.CustomEvent(
+                "DieLevel",
                 new Dictionary<string, object>{
                     {"Level", levelName}
                 }
@@ -139,10 +134,10 @@ public class Player : MonoBehaviour
 
     private IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "DeathLine")
+        if (collision.gameObject.CompareTag("DeathLine"))
         {
-            AnalyticsResult result = Analytics.CustomEvent(
-                "DeathFallingOFF",
+            Analytics.CustomEvent(
+                "DieFallingOff",
                 new Dictionary<string, object>{
                     {"Level", levelName}
                 }
@@ -161,30 +156,41 @@ public class Player : MonoBehaviour
             explosion.Play();
         }
         
-        else if (collision.gameObject.tag == "Goal")
+        else if (collision.gameObject.CompareTag("Goal"))
         {
             if (!GetEnoughKeys())
             {
-                AnalyticsResult result = Analytics.CustomEvent(
-                "NotEnoughKeys",
-                new Dictionary<string, object>{
-                    {"NumKeys", GetNumKeys()}
-                }
+                Analytics.CustomEvent(
+                    "NotEnoughKeys",
+                    new Dictionary<string, object>{
+                        {"NumKeys", GetNumKeys()}
+                    }
                 );
-                print("not enough");
             }
             else
             {
-                AnalyticsResult result2 = Analytics.CustomEvent(
-                "PassLevel",
-                new Dictionary<string, object>{
-                    {"Level", levelName},
-                    {"Time", Time.time}
-                }
+                Analytics.CustomEvent(
+                    "PassLevel",
+                    new Dictionary<string, object>{
+                        {"Level", levelName},
+                    }
                 );
+
+                Analytics.CustomEvent(
+                    "PassLevel_" + levelName,
+                    new Dictionary<string, object>{
+                        {"Time", Time.time},
+                    }
+                );
+
                 SceneManager.LoadScene(nextSceneName);
             }
         }
         
+    }
+
+    public String GetLevelName()
+    {
+        return levelName;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.Analytics;
 
 public class Menu : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Menu : MonoBehaviour
         string name =  EventSystem.current.currentSelectedGameObject.name;
         if(name == "1")
         {
+            print("111");
             SceneManager.LoadScene("SquareTutorial");
         }
         if(name == "2")
@@ -43,9 +45,11 @@ public class Menu : MonoBehaviour
         GameObject.Find("Canvas/MainMenu/UI").SetActive(false);
     }
     public void ShowRules(){
+        Analytics.CustomEvent("HitHelpInMenu");
         GameObject.Find("Canvas/MainMenu/Rules").SetActive(true);
     }
     public void ShowGameDesign(){
+        Analytics.CustomEvent("HitGameDesign");
         GameObject.Find("Canvas/MainMenu/GameDesign").SetActive(true);
     }
     public void ResumeToScene()
