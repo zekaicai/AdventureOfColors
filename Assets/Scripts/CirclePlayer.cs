@@ -61,4 +61,9 @@ public class CirclePlayer : Player
     {
         rb.velocity = new Vector2(moveForce, jumpForce);
     }
+
+    public void JumpByForce(float force)
+    {
+        rb.velocity = new Vector2(moveForce, force);
+    }
 }
