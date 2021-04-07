@@ -13,6 +13,12 @@ public class Player : MonoBehaviour
     protected Animator anim;
     protected SpriteRenderer sr;
     [SerializeField] protected string nextSceneName;
+
+    public static explicit operator Player(GameObject v)
+    {
+        throw new NotImplementedException();
+    }
+
     [SerializeField] protected AudioSource explosion;
     [SerializeField] protected float moveForce;
     [SerializeField] protected string levelName;
@@ -67,6 +73,7 @@ public class Player : MonoBehaviour
 
     public void GetKey()
     {
+        print("get");
         keySound.Play();
         numKeys++;
         ChangeKeyUIColor(keys[numKeys - 1]);
