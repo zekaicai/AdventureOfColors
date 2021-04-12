@@ -239,9 +239,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 1
+  nextSceneName: 
   explosion: {fileID: 3306521394882374467}
-  cherrySound: {fileID: 1282017449}
   moveForce: 6
+  levelName: 
+  keys: []
+  targetNumKeys: 0
+  keySound: {fileID: 0}
 --- !u!58 &3306521394882374465
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -55,4 +55,9 @@ public class SquarePlayer : Player
             transform.localScale = new Vector2(1, 1);
         }
     }
+
+    public void JumpByForce(float force)
+    {
+        rb.velocity = new Vector2(0, force);
+    }
 }

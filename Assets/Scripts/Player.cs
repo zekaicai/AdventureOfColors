@@ -167,6 +167,7 @@ public class Player : MonoBehaviour
         {
             if (!GetEnoughKeys())
             {
+                print("not enough keys!");
                 Analytics.CustomEvent(
                     "NotEnoughKeys",
                     new Dictionary<string, object>{
