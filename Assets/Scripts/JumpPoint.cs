@@ -20,6 +20,10 @@ public class JumpPoint : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SquarePlayer player = GameObject.FindGameObjectWithTag("Player").GetComponent<SquarePlayer>();
-        player.JumpByForce(jumpForce);
+        //if (player.IsFalling())
+
+            player.JumpByForce(jumpForce);
+        //}
+        
     }
 }
