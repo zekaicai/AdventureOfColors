@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingBlockHorizontal : MonoBehaviour
+public class MovingColorBlockHorizontal : ColorBlock
 {
     [SerializeField] private float leftPoint;
     [SerializeField] private float rightPoint;
@@ -14,15 +14,18 @@ public class MovingBlockHorizontal : MonoBehaviour
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         nextActionTime = Time.time + period;
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (state == State.waiting)
         {
             if (Time.time >= nextActionTime)

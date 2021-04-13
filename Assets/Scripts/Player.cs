@@ -105,6 +105,11 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    public bool IsFalling()
+    {
+        return rb.velocity.y < 0;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Spike") && !anim.GetBool("Dead"))
@@ -167,6 +172,7 @@ public class Player : MonoBehaviour
         {
             if (!GetEnoughKeys())
             {
+                print("not enough keys!");
                 Analytics.CustomEvent(
                     "NotEnoughKeys",
                     new Dictionary<string, object>{
