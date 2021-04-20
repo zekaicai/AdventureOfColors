@@ -17,13 +17,12 @@ public class JumpPoint : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        SquarePlayer player = GameObject.FindGameObjectWithTag("Player").GetComponent<SquarePlayer>();
-        //if (player.IsFalling())
+        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
-            player.JumpByForce(jumpForce);
-        //}
-        
+        player.MoveTo(transform.position);
+
+        player.JumpByForce(jumpForce);        
     }
 }

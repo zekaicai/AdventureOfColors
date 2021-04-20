@@ -9,6 +9,8 @@ public class ColorBlock : MonoBehaviour
     protected Player player;
     protected Collider2D coll;
     protected SpriteRenderer sr;
+    private static Color32 pink = new Color32(255, 74, 211, 255);
+    private static Color32 blue = new Color32(35, 214, 255, 255);
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -45,7 +47,7 @@ public class ColorBlock : MonoBehaviour
         Collider2D[] collider2Ds = gameObject.GetComponents<Collider2D>();
         for (int i = 0; i < collider2Ds.Length; i++)
         {
-            if (this.sr.color.Equals(GetObjectColor(gameObject)))
+            if (GetObjectColor() == GetColor())
             {
                 Physics2D.IgnoreCollision(collider2Ds[i], coll, true);
             }
@@ -57,25 +59,25 @@ public class ColorBlock : MonoBehaviour
         
     }
 
-    private object GetObjectColor(GameObject gameObject)
+    private bool GetObjectColor()
     {
-        return gameObject.GetComponent<SpriteRenderer>().color;
+        return isRed;
     }
 
-    private static Color GetColor()
+    private static bool GetColor()
     {
-        return GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color;
+        return GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isRed;
     }
 
     private void ChangeColor()
     {
         if (isRed)
         {
-            sr.color = Color.red;
+            sr.color = pink;
         }
         else
         {
-            sr.color = Color.green;
+            sr.color = blue;
         }
     }
 }

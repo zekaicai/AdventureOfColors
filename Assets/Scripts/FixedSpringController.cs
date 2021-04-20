@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FixedSpringController : MonoBehaviour
 {
+    [SerializeField] float jumpForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,11 @@ public class FixedSpringController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player.JumpByForce(jumpForce);
     }
 }
