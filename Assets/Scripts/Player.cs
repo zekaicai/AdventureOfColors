@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     protected Animator anim;
     protected SpriteRenderer sr;
     [SerializeField] protected string nextSceneName;
+    private static Color32 pink = new Color32(255, 74, 211, 255);
+    private static Color32 blue = new Color32(35, 214, 255, 255);
 
     public static explicit operator Player(GameObject v)
     {
@@ -63,11 +65,11 @@ public class Player : MonoBehaviour
         }
         if (isRed)
         {
-            sr.color = Color.red;
+            sr.color = pink;
         }
         else
         {
-            sr.color = Color.green;
+            sr.color = blue;
         }
     }
 
@@ -205,5 +207,15 @@ public class Player : MonoBehaviour
     public String GetLevelName()
     {
         return levelName;
+    }
+
+    public void MoveTo(Vector3 position)
+    {
+        transform.position = position;
+    }
+
+    public void JumpByForce(float force)
+    {
+        rb.velocity = new Vector2(0, force);
     }
 }

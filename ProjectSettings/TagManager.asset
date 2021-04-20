@@ -13,6 +13,7 @@ TagManager:
   - DeathLine
   - Goal
   - Check
+  - GM
   layers:
   - Default
   - TransparentFX
