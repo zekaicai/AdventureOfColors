@@ -47,7 +47,7 @@ public class ColorBlock : MonoBehaviour
         Collider2D[] collider2Ds = gameObject.GetComponents<Collider2D>();
         for (int i = 0; i < collider2Ds.Length; i++)
         {
-            if (GetObjectColor() == GetColor())
+            if (this.sr.color.Equals(GetObjectColor(gameObject)))
             {
                 Physics2D.IgnoreCollision(collider2Ds[i], coll, true);
             }
@@ -59,14 +59,14 @@ public class ColorBlock : MonoBehaviour
         
     }
 
-    private bool GetObjectColor()
+    private object GetObjectColor(GameObject gameObject)
     {
-        return isRed;
+        return gameObject.GetComponent<SpriteRenderer>().color;
     }
 
-    private static bool GetColor()
+    private static Color GetColor()
     {
-        return GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isRed;
+        return GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color;
     }
 
     private void ChangeColor()
