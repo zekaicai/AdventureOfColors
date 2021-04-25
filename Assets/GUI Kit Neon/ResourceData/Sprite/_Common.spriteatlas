@@ -32,7 +32,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: e573f4aa968b94c3aa451dc564b1c6e9, type: 3}
-    totalSpriteSurfaceArea: 2837162
+    totalSpriteSurfaceArea: 763562
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -120,7 +120,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4365697ea8a484597bdeebfece51b922, type: 3}
   - {fileID: 21300000, guid: ee3e8e7e9744f4e64a328d93217e58a3, type: 3}
   - {fileID: 21300000, guid: 380da6ee150d34d63bcb1d5a354f06a3, type: 3}
-  - {fileID: 21300000, guid: f2cad71fb61da4ce4b77af92acd730cd, type: 3}
   - {fileID: 21300000, guid: fac2df1f3e0524c8fba7a4c5d38fbaf7, type: 3}
   - {fileID: 21300000, guid: 2ab26d2f84b2a4e2fa943bfb1ec75327, type: 3}
   - {fileID: 21300000, guid: 2952928fb60134ce19dbe64a380f1ca7, type: 3}
@@ -211,7 +210,6 @@ SpriteAtlas:
   - status_icon_jewel
   - btn_purple_f
   - btn_Pause_f
-  - bg_default
   - check_on
   - slider_icon_energy
   - count_bg
