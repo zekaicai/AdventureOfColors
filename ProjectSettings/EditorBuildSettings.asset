@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/square02.unity
     guid: e414fec466dbe4dc583e9f54f1608692
+  - enabled: 1
+    path: Assets/Scenes/circle02.unity
+    guid: f55f44c0bd12742809b711bff743061c
   m_configObjects: {}
