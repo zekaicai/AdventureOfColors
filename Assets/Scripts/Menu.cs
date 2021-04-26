@@ -34,6 +34,10 @@ public class Menu : MonoBehaviour
         }
         if(name == "4")
         {
+            SceneManager.LoadScene("circle02");
+        }
+        if(name == "5")
+        {
             SceneManager.LoadScene("square02");
         }
 
