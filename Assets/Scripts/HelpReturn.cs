@@ -37,8 +37,12 @@ public class HelpReturn : MonoBehaviour
             bgm.Play();
         }
         GameObject.Find("Canvas/Buttons/Rules").SetActive(false);
-        GameObject.Find("Canvas/Buttons/MusicPanel").SetActive(false);
+        
         Time.timeScale = 1f;
+    }
+    public void MusicExit()
+    {
+        GameObject.Find("Canvas/Buttons/MusicPanel").SetActive(false);
     }
     public void ReturnToMainMenu()
     {

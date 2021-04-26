@@ -17724,7 +17724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306521394882374492, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
       propertyPath: nextSceneName
-      value: VodkaDance
+      value: FinishScene
       objectReference: {fileID: 0}
     - target: {fileID: 3306521394882374492, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
       propertyPath: targetNumKeys
