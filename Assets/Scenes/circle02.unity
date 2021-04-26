@@ -1191,6 +1191,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -89.488
       objectReference: {fileID: 0}
+    - target: {fileID: 2411698019263554631, guid: 463c0b546f0e44976a95ae8cb590d8b5, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 236ecb92ea8384d4e8368b5a0ca14bd9, type: 2}
+    - target: {fileID: 2411698019263554648, guid: 463c0b546f0e44976a95ae8cb590d8b5, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 236ecb92ea8384d4e8368b5a0ca14bd9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 463c0b546f0e44976a95ae8cb590d8b5, type: 3}
 --- !u!1 &255867930
@@ -116950,10 +116958,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -89.22
       objectReference: {fileID: 0}
+    - target: {fileID: 5903461897966079937, guid: 2012db4c3b9b64289b0092c8ac18f603, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 236ecb92ea8384d4e8368b5a0ca14bd9, type: 2}
     - target: {fileID: 5903461897966079941, guid: 2012db4c3b9b64289b0092c8ac18f603, type: 3}
       propertyPath: m_Name
       value: BluePlatform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5903461897966079966, guid: 2012db4c3b9b64289b0092c8ac18f603, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 236ecb92ea8384d4e8368b5a0ca14bd9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2012db4c3b9b64289b0092c8ac18f603, type: 3}
 --- !u!4 &1429583609 stripped
