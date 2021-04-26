@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPos : MonoBehaviour
 {
     private GameMaster gm;
-    [SerializeField]AudioSource bgm;
+    public AudioSource bgm;
     // Start is called before the first frame update
     void Start()
     {

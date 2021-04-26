@@ -1551,7 +1551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319414642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.074703, y: -0.89035773, z: -10}
+  m_LocalPosition: {x: -52.032566, y: -0.89015603, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113612,6 +113612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8939a839c3e43d0ab41a4d6ef9aa1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 54c477db6ac1e42af9e017df0ef77d7f, type: 2}
+  player: {fileID: 1888497271}
 --- !u!114 &749328496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114631,7 +114633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973074188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.74, y: -8.94, z: 0}
+  m_LocalPosition: {x: -15.33, y: -8.94, z: 0}
   m_LocalScale: {x: 0.4923599, y: 6.0569406, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -117538,6 +117540,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 749328499}
     m_Modifications:
+    - target: {fileID: 919627431, guid: bda18dc79d3684ba09404af75f44ea16, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 749328495}
+    - target: {fileID: 919627431, guid: bda18dc79d3684ba09404af75f44ea16, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 1870188022369691610, guid: bda18dc79d3684ba09404af75f44ea16, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -117685,6 +117695,14 @@ PrefabInstance:
     - target: {fileID: 1870188023464275273, guid: bda18dc79d3684ba09404af75f44ea16, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681416205207624834, guid: bda18dc79d3684ba09404af75f44ea16, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 749328495}
+    - target: {fileID: 2681416205207624834, guid: bda18dc79d3684ba09404af75f44ea16, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowMusic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bda18dc79d3684ba09404af75f44ea16, type: 3}
@@ -125357,6 +125375,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3787114319818226104, guid: bfb2689802484405c8d9ca509ea53e73, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 54c477db6ac1e42af9e017df0ef77d7f, type: 2}
     - target: {fileID: 3787114319818226106, guid: bfb2689802484405c8d9ca509ea53e73, type: 3}
       propertyPath: explosion
       value: 
