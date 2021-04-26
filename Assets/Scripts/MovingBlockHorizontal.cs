@@ -12,17 +12,25 @@ public class MovingBlockHorizontal : MonoBehaviour
     private float nextActionTime = 0.0f;
     [SerializeField] float period;
     private Rigidbody2D rb;
+    [SerializeField]public bool isAwake;
 
     // Start is called before the first frame update
     private void Start()
     {
         nextActionTime = Time.time + period;
         rb = GetComponent<Rigidbody2D>();
+        isAwake = false;
     }
 
     // Update is called once per frame
     private void Update()
     {
+
+        if (!isAwake)
+        {
+            return;
+        }
+
         if (state == State.waiting)
         {
             if (Time.time >= nextActionTime)
@@ -86,6 +94,12 @@ public class MovingBlockHorizontal : MonoBehaviour
                 nextActionTime = Time.time + period;
             }
         }
+    }
+
+    public void Awake()
+    {
+        isAwake = true;
+        nextActionTime = Time.time + period;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
