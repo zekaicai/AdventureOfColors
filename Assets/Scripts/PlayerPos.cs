@@ -36,7 +36,7 @@ public class PlayerPos : MonoBehaviour
         map.Add("SquareTutorial", new Vector2(-42, -4));
         map.Add("VodkaDance", new Vector2(-54, -4));
         map.Add("SquareScene", new Vector2(74, 12));
-        map.Add("square02", new Vector2(-71, 5));
+        map.Add("square02", new Vector2(-70.34f, 5.52f));
         map.Add("circle02", new Vector2(-54, -3));
     }
 
