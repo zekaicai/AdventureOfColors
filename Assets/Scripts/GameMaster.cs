@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class GameMaster : MonoBehaviour
     private static GameMaster instance;
     public Vector2 lastCheckpointPos;
     public float audioTime;
+    public string lastSceneName;
+    
     // Start is called before the first frame update
 
     void Awake()
@@ -16,11 +20,14 @@ public class GameMaster : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(instance);
-        } else
+        }
+        else
         {
             Destroy(gameObject);
-        }
+        }      
     }
+
+
 
     void Start()
     {
