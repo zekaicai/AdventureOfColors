@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         numKeys = 0;
         targetNumKeys = keys.Capacity;
+        print(transform.position);
     }
 
     // Update is called once per frame
