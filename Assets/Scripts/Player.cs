@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] protected string nextSceneName;
     private static Color32 pink = new Color32(255, 74, 211, 255);
     private static Color32 blue = new Color32(35, 214, 255, 255);
+    [SerializeField] GameObject bubble;
 
     public static explicit operator Player(GameObject v)
     {
@@ -181,6 +182,7 @@ public class Player : MonoBehaviour
                         {"NumKeys", GetNumKeys()}
                     }
                 );
+                Instantiate(bubble, Vector3.zero, transform.rotation);
             }
             else
             {

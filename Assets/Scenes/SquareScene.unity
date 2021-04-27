@@ -90293,7 +90293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: -4, z: -10}
+  m_LocalPosition: {x: 74, y: 12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -106384,7 +106384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070053456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: -4, z: -10}
+  m_LocalPosition: {x: 74, y: 12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1567232263}
@@ -109993,7 +109993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03ee6987845b4052a8b4a4bc3916bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckpointPos: {x: -24, y: -4}
+  lastCheckpointPos: {x: 74, y: 12}
   audioTime: 0
 --- !u!4 &2120475721
 Transform:
@@ -110319,6 +110319,10 @@ PrefabInstance:
       value: SquarePlayer
       objectReference: {fileID: 0}
     - target: {fileID: 3306521394882374492, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
+      propertyPath: bubble
+      value: 
+      objectReference: {fileID: 5872077658791389403, guid: c1feacd1aa2d148079a7c7add7838e06, type: 3}
+    - target: {fileID: 3306521394882374492, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
       propertyPath: keySound
       value: 
       objectReference: {fileID: 495958743}
@@ -110356,11 +110360,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306521394882374493, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 3306521394882374493, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3306521394882374493, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
       propertyPath: m_LocalPosition.z

@@ -73234,7 +73234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1980345780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74155,6 +74155,10 @@ PrefabInstance:
       propertyPath: key1
       value: 
       objectReference: {fileID: 1512568901}
+    - target: {fileID: 3306521394882374492, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
+      propertyPath: bubble
+      value: 
+      objectReference: {fileID: 5872077658791389403, guid: c1feacd1aa2d148079a7c7add7838e06, type: 3}
     - target: {fileID: 3306521394882374492, guid: a18d4418b29324c1d815c3811aeaf6a6, type: 3}
       propertyPath: keySound
       value: 
