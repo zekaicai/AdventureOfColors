@@ -1850,6 +1850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPoint (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4831927453365056655, guid: 5774ec4bce764404c84b7c9b2d7c83b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5774ec4bce764404c84b7c9b2d7c83b7, type: 3}
 --- !u!4 &218120043 stripped
@@ -4992,6 +4996,10 @@ PrefabInstance:
     - target: {fileID: 4831927453365056655, guid: 5774ec4bce764404c84b7c9b2d7c83b7, type: 3}
       propertyPath: m_Name
       value: CheckPoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831927453365056655, guid: 5774ec4bce764404c84b7c9b2d7c83b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5774ec4bce764404c84b7c9b2d7c83b7, type: 3}
@@ -14142,6 +14150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastCheckpointPos: {x: -70.34, y: 5.52}
   audioTime: 0
+  lastSceneName: 
 --- !u!4 &870238806
 Transform:
   m_ObjectHideFlags: 0
