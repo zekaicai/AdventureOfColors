@@ -109993,7 +109993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03ee6987845b4052a8b4a4bc3916bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckpointPos: {x: 74, y: 12}
+  lastCheckpointPos: {x: -23, y: -4.5}
   audioTime: 0
   lastSceneName: 
 --- !u!4 &2120475721
